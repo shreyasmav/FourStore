@@ -1,0 +1,53 @@
+registration
+shop
+____________________________________________________
+$connect = mysqli_connect("localhost", "root", "", "shop");
+$query = "SELECT * FROM products $q ORDER BY Name ASC"; 
+$result = mysqli_query($connect, $query);
+if(mysqli_num_rows($result)==0)//EMPTY
+while($row = mysqli_fetch_array($result))
+___________________________________________________________
+
+CREATE TABLE registration.users(
+	id int PRIMARY KEY AUTO_INCREMENT,
+	username varchar(255) NOT NULL,
+	email varchar(255) NOT NULL,
+	password varchar(255) NOT NULL
+)
+____________________________________________________________
+
+CREATE TABLE shop.products(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar(100) UNIQUE NOT NULL,
+    brand varchar(50) NOT NULL,
+    category varchar(50) NOT NULL,
+    price float(10,2) NOT NULL,
+    qty int NOT NULL
+)
+
+//Insert products to table
+INSERT INTO products(name,brand,category,price,qty) VALUES('Apple iPhone X','Apple','Phones',100000,10);
+INSERT INTO products(name,brand,category,price,qty) VALUES('Apple iPhone 8','Apple','Phones',70000,10);
+INSERT INTO products(name,brand,category,price,qty) VALUES('Apple iPhone XS Max','Apple','Phones',150000,10);
+INSERT INTO products(name,brand,category,price,qty) VALUES('Samsung Galaxy S9','Samsung','Phones',60000,10);
+INSERT INTO products(name,brand,category,price,qty) VALUES('Samsung Galaxy Note9','Samsung','Phones',70000,10);
+INSERT INTO products(name,brand,category,price,qty) VALUES('Samsung Galaxy S8','Samsung','Phones',40000,10);
+INSERT INTO products(name,brand,category,price,qty) VALUES('OnePlus 6T','OnePlus','Phones',40000,10);
+INSERT INTO products(name,brand,category,price,qty) VALUES('OnePlus 6','OnePlus','Phones',35000,10);
+INSERT INTO products(name,brand,category,price,qty) VALUES('OnePlus 5T','OnePlus','Phones',30000,10);
+
+CREATE TABLE shop.orders(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    pid int NOT NULL,
+    pname varchar(100) NOT NULL,
+    uname varchar(100) NOT NULL,
+    date datetime
+)
+
+CREATE TABLE shop.cart(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    pid int NOT NULL,
+    pname varchar(100) NOT NULL,
+    category varchar(50),
+    price float(10,2)
+)

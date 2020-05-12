@@ -1,0 +1,35 @@
+body{
+ background: lightblue url("Images/homepage/home2.jpg") no-repeat fixed center; 
+}
+
+.container{
+	width: 90%;
+	height: 100%;
+	margin: 0px auto;
+	overflow: auto;
+background: lightblue url("Images/homepage/home2.jpg") no-repeat fixed center; 
+	position: relative;
+	text-align: center;
+
+}
+/*
+.pricing-table {
+	margin: 100px auto;
+	text-align: center;
+	width: 1000px; 
+}*/
+.prcont a{
+	text-decoration: none;
+	font-size: 25px;
+	color: black;
+}
+/*
+.prcont{
+	padding: 25px;
+	width:300px;
+	height:400px;
+	background-color:white;
+	border-radius:25px;border: 3px solid black;text-align: center;display:inline-block;
+}
+*/
+
